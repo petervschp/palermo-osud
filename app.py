@@ -184,6 +184,27 @@ DEFAULTS = {
     "min_screen_ms": 3000
 }
 
+
+def normalize_names(raw_lines):
+    """Strip names, drop empties, and make them unique (case-insensitive) while preserving order.
+    Returns (names, fixed_dupes) where fixed_dupes is a list of original duplicate base names.
+    """
+    cleaned = [x.strip() for x in raw_lines if x and x.strip()]
+    seen = {}
+    out = []
+    fixed = []
+    for name in cleaned:
+        key = name.casefold()
+        if key not in seen:
+            seen[key] = 1
+            out.append(name)
+        else:
+            seen[key] += 1
+            if name not in fixed:
+                fixed.append(name)
+            out.append(f"{name} ({seen[key]})")
+    return out, fixed
+
 def new_game(names, pin, mafia_count, settings):
     players = [{"id": i, "name": n, "alive": True, "role": "citizen"} for i, n in enumerate(names)]
     roles = []
@@ -195,7 +216,6 @@ def new_game(names, pin, mafia_count, settings):
     while len(roles) < len(players):
         roles.append("citizen")
     roles = shuffle(roles)
-    players = shuffle(players)
     for i, r in enumerate(roles):
         players[i]["role"] = r
 
@@ -241,7 +261,7 @@ def screen_setup():
     ta = html.TEXTAREA(Placeholder="Napr.\nAnna\nBoris\nCyril\nDáša\nEma\n…")
     left <= ta
 
-    pin_in = html.INPUT(Type="password", Placeholder="Spoločný PIN (4 číslice)", Maxlength="4")
+    pin_in = html.INPUT(Type="tel", Placeholder="Spoločný PIN (4 číslice)", Maxlength="4", Class="pin")
     _set_pin_attrs(pin_in)
     pin_wrap = html.DIV(Class="grid")
     pin_wrap <= html.DIV([html.LABEL("Spoločný PIN (4 číslice)"), pin_in])
@@ -314,7 +334,10 @@ def screen_setup():
     refresh_mafia_options()
 
     def on_start(ev=None):
-        names = [x.strip() for x in ta.value.splitlines() if x.strip()]
+        names, dupes = normalize_names(ta.value.splitlines())
+        if dupes:
+            toast("Duplicitné mená upravené: " + ", ".join(dupes))
+            ta.value = "\n".join(names)
         if len(names) < 5 or len(names) > 12:
             window.alert("V1 je navrhnutá pre 5–12 hráčov. Uprav počet mien.")
             return
@@ -360,7 +383,7 @@ def pass_gate(title_text, subtitle_text, on_unlock):
     if subtitle_text:
         wrap <= para(subtitle_text, "small")
 
-    pin_in = html.INPUT(Type="password", Placeholder="Zadaj PIN", Maxlength="4")
+    pin_in = html.INPUT(Type="tel", Placeholder="Zadaj PIN", Maxlength="4", Class="pin")
     _set_pin_attrs(pin_in)
     wrap <= pin_in
 

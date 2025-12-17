@@ -51,3 +51,8 @@ MIT – viď `LICENSE`.
 ## Troubleshooting
 
 - Ak sa ti po update na GitHub Pages stále zobrazuje stará verzia, vymaž cache / odinštaluj PWA alebo v Chrome: **Settings → Site settings → Storage → Clear** pre danú stránku. (Service Worker si cacheuje súbory.)
+
+
+## Poznámka k menám hráčov
+- Appka zachová poradie hráčov presne podľa zoznamu v nastavení.
+- Ak zadáš rovnaké meno viackrát (aj s inou veľkosťou písmen), appka ho automaticky odlíši pridaním „ (2)“, „ (3)“…
