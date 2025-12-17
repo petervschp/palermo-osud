@@ -1,0 +1,697 @@
+[
+  {
+    "id": "mf_001",
+    "spoiler": false,
+    "text": "Palermo-fakt: „Mestečko Palermo“ je lokálny názov pre sociálnu dedukčnú hru „Mafia“ (noc/deň, tajné roly)."
+  },
+  {
+    "id": "mf_002",
+    "spoiler": false,
+    "text": "Palermo-fakt: Hra „Mafia“ sa v prehľadoch uvádza ako vytvorená Dimitrym Davidoffom v roku 1986 (v prostredí Moskovskej štátnej univerzity)."
+  },
+  {
+    "id": "mf_003",
+    "spoiler": false,
+    "text": "Palermo-fakt: „Palermo“ je tematický sicílsky názov — nie názov pôvodnej hry."
+  },
+  {
+    "id": "mf_004",
+    "spoiler": false,
+    "text": "Palermo-fakt: Slovenské pravidlá „Mestečko Palermo“ priamo uvádzajú rolu detektíva Corrada Cattaniho."
+  },
+  {
+    "id": "mf_005",
+    "spoiler": false,
+    "text": "Palermo-fakt: Český popis pravidiel spomína „Katányiho“ ako postavu prevzatú z talianskeho krimifilmu."
+  },
+  {
+    "id": "mf_006",
+    "spoiler": false,
+    "text": "Palermo-fakt: Corrado Cattani je fiktívny komisár zo seriálu „La piovra“ („Chobotnica“)."
+  },
+  {
+    "id": "mf_007",
+    "spoiler": false,
+    "text": "Palermo-fakt: Teda: mechanika hry nie je „podľa seriálu“, ale názvoslovie a komisár sú seriálom inšpirované."
+  },
+  {
+    "id": "mf_008",
+    "spoiler": false,
+    "text": "Palermo-fakt: V slovenskom opise pravidiel sa uvádza, že mafiáni sa v prvej noci spoznajú."
+  },
+  {
+    "id": "mf_009",
+    "spoiler": false,
+    "text": "Palermo-fakt: V slovenskom opise pravidiel sa uvádza, že v prvej noci sa mafiáni nemajú dohadovať na obeti."
+  },
+  {
+    "id": "mf_010",
+    "spoiler": false,
+    "text": "Palermo-fakt: V slovenskom opise pravidiel je mechanika: každý mafián strieľa tajne a obeť zomrie len pri úplnej zhode."
+  },
+  {
+    "id": "mf_011",
+    "spoiler": false,
+    "text": "Palermo-fakt: Rovnaké pravidlo „musí sa zhodnúť všetci mafiáni“ uvádza aj český opis hry."
+  },
+  {
+    "id": "mf_012",
+    "spoiler": false,
+    "text": "Palermo-fakt: Slovenské pravidlá hovoria, že hra dáva zmysel aspoň so 7 hráčmi a moderátorom („Osud“)."
+  },
+  {
+    "id": "mf_013",
+    "spoiler": false,
+    "text": "Palermo-fakt: Osud je rozprávač/moderátor, ktorý vedie noc a oznamuje výsledky; mobilná appka vie túto rolu nahradiť."
+  },
+  {
+    "id": "mf_014",
+    "spoiler": false,
+    "text": "Palermo-fakt: Katányiho otázka v pravidlách má podobu „je to mafián / nie je to mafián“ (informáciu pozná len on)."
+  },
+  {
+    "id": "mf_015",
+    "spoiler": false,
+    "text": "Palermo-fakt: V pôvodnej „Mafii“ sa ako základ uvádzajú dve strany: informovaná menšina (mafia) a neinformovaná väčšina (občania)."
+  },
+  {
+    "id": "mf_016",
+    "spoiler": false,
+    "text": "Palermo-fakt: Prehľady uvádzajú, že hra „Mafia“ sa používa aj pod iným menom „Werewolf“."
+  },
+  {
+    "id": "mf_017",
+    "spoiler": false,
+    "text": "Palermo-fakt: Podľa prehľadov (napr. Wikipédie o hre „Mafia“) sa v 90. rokoch v Európe ujal aj názov „City of Palermo“."
+  },
+  {
+    "id": "mf_018",
+    "spoiler": false,
+    "text": "Palermo-fakt: Slovenské pravidlá spomínajú, že existuje viac variácií hry s ďalšími rolami (napr. šerif, veštec...)."
+  },
+  {
+    "id": "mf_019",
+    "spoiler": false,
+    "text": "Palermo-fakt: V slovenskom opise pravidiel sa píše, že mobilná aplikácia môže nahradiť Osud na rôznych platformách."
+  },
+  {
+    "id": "mf_020",
+    "spoiler": false,
+    "text": "Palermo-fakt: Záver: vaša appka je „Osud“, ale mikrofakty sa viažu na seriál, ktorý dal hre mená (Cattani/Katányi)."
+  },
+  {
+    "id": "mf_021",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Seriál sa volá „La piovra“ a v angličtine sa často uvádza ako „The Octopus“."
+  },
+  {
+    "id": "mf_022",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Je to taliansky televízny seriál o mafii."
+  },
+  {
+    "id": "mf_023",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Žánrovo sa uvádza ako kriminálna dráma a politický thriller."
+  },
+  {
+    "id": "mf_024",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Vysielala ho RAI."
+  },
+  {
+    "id": "mf_025",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Premiéra: 11. marec 1984."
+  },
+  {
+    "id": "mf_026",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Finále ságy vyšlo v januári 2001 (v prehľadoch sa uvádza 11. január 2001)."
+  },
+  {
+    "id": "mf_027",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Počet minisérií („sezón“): 10."
+  },
+  {
+    "id": "mf_028",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Počet epizód: 48."
+  },
+  {
+    "id": "mf_029",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Producent série sa uvádza Sergio Silva."
+  },
+  {
+    "id": "mf_030",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: V hlavných menách obsadenia sa uvádzajú Michele Placido, Remo Girone, Vittorio Mezzogiorno a Patricia Millardet."
+  },
+  {
+    "id": "mf_031",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Režiséri podľa častí: Damiano Damiani, Florestano Vancini, Luigi Perelli, Giacomo Battiato."
+  },
+  {
+    "id": "mf_032",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Skladatelia uvádzaní pri seriáli: Riz Ortolani, Ennio Morricone, Paolo Buonvino."
+  },
+  {
+    "id": "mf_033",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: V prehľadoch sa uvádza priemerná sledovanosť okolo 10 miliónov a špičky okolo 15 miliónov divákov."
+  },
+  {
+    "id": "mf_034",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video opisuje ságu ako príbeh boja proti mafii, moci a korupcii."
+  },
+  {
+    "id": "mf_035",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video zdôrazňuje metaforu „chápadiel“ systému, ktorý obopína inštitúcie a spoločnosť."
+  },
+  {
+    "id": "mf_036",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video uvádza súhrn celej ságy „cez desať intenzívnych sezón“."
+  },
+  {
+    "id": "mf_037",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: IMDb opisuje sériu ako ságu o moci, peniazoch, násilí a korupcii."
+  },
+  {
+    "id": "mf_038",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: TVDB opisuje seriál ako medzinárodný hit, ktorý bežal 18 rokov."
+  },
+  {
+    "id": "mf_039",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: JustWatch opisuje „The Octopus“ ako fenomén s 10 sezónami v rokoch 1984–2001."
+  },
+  {
+    "id": "mf_040",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Prime Video uvádza titul pod názvom „The Octopus“ v katalógoch (dostupnosť sa líši podľa krajiny)."
+  },
+  {
+    "id": "mf_041",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 1 („La piovra“) je z roku 1984 a má 6 epizód."
+  },
+  {
+    "id": "mf_042",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 2 („La piovra 2“) je z roku 1986 a má 6 epizód."
+  },
+  {
+    "id": "mf_043",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 3 („La piovra 3“) je z roku 1987 a má 7 epizód."
+  },
+  {
+    "id": "mf_044",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 4 („La piovra 4“) je z roku 1989 a má 6 epizód."
+  },
+  {
+    "id": "mf_045",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 5 („La piovra 5 – Il cuore del problema“) je z roku 1990 a má 5 epizód."
+  },
+  {
+    "id": "mf_046",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 6 („La piovra 6 – L'ultimo segreto“) je z roku 1992 a má 6 epizód."
+  },
+  {
+    "id": "mf_047",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 7 („La piovra 7 – Indagine sulla morte del commissario Cattani“) je z roku 1995 a má 6 epizód."
+  },
+  {
+    "id": "mf_048",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 8 („La piovra 8 – Lo scandalo“) je z roku 1997 a má 2 epizód."
+  },
+  {
+    "id": "mf_049",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 9 („La piovra 9 – Il patto“) je z roku 1998 a má 2 epizód."
+  },
+  {
+    "id": "mf_050",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Miniséria 10 („La piovra 10“) je z roku 2001 a má 2 epizód."
+  },
+  {
+    "id": "mf_051",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Komisára Corrada Cattaniho hrá Michele Placido."
+  },
+  {
+    "id": "mf_052",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: V 1. minisérii je Cattani preložený z Ríma na Sicíliu."
+  },
+  {
+    "id": "mf_053",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: V 1. minisérii je Cattani menovaný zástupcom šéfa polície po vražde komisára Marinea."
+  },
+  {
+    "id": "mf_054",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Cattaniho manželka sa volá Else (hrá ju Nicole Jamet)."
+  },
+  {
+    "id": "mf_055",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Cattaniho dcéra sa volá Paola (v súhrne sa uvádza Cariddi Nardulli)."
+  },
+  {
+    "id": "mf_056",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: V 1. minisérii sa vyšetrovanie točí okolo lokálneho obchodu so zbraňami a drogami."
+  },
+  {
+    "id": "mf_057",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Sudkyňu Silviu Conti hrá Patricia Millardet."
+  },
+  {
+    "id": "mf_058",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Biografické zdroje o Patricii Millardet ju výslovne spájajú s rolou sudkyne Silvie Conti v La piovra."
+  },
+  {
+    "id": "mf_059",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Davide Licatu (vyšetrovateľ) hrá Vittorio Mezzogiorno."
+  },
+  {
+    "id": "mf_060",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: V biografii Vittoria Mezzogiorna sa uvádza, že sa stal hviezdou malej obrazovky práve vďaka Davide Licatovi v La piovra."
+  },
+  {
+    "id": "mf_061",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Gaetano „Tano“ Cariddi je postava hraná Remom Gironem."
+  },
+  {
+    "id": "mf_062",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Talianske a anglické zdroje spájajú Rema Gironeho najmä s rolou Tano Cariddi."
+  },
+  {
+    "id": "mf_063",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že postava Tano Cariddi bola inšpirovaná reálnym finančníkom/mafióznym typom Michele Sindona."
+  },
+  {
+    "id": "mf_064",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza v obsadení aj Florindu Bolkan (Countess Olga Camastra)."
+  },
+  {
+    "id": "mf_065",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza v obsadení aj Martina Balsama (Frank Carrisi)."
+  },
+  {
+    "id": "mf_066",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza v obsadení aj Raoula Bovu (v rôznych úlohách v neskorších minisériách)."
+  },
+  {
+    "id": "mf_067",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza v obsadení aj Danielu „Miettu“ Migliettu (Rosaria Albanese)."
+  },
+  {
+    "id": "mf_068",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Michele Placido."
+  },
+  {
+    "id": "mf_069",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Remo Girone."
+  },
+  {
+    "id": "mf_070",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Patricia Millardet."
+  },
+  {
+    "id": "mf_071",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Vittorio Mezzogiorno."
+  },
+  {
+    "id": "mf_072",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Florinda Bolkan."
+  },
+  {
+    "id": "mf_073",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj François Périer."
+  },
+  {
+    "id": "mf_074",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Bruno Cremer."
+  },
+  {
+    "id": "mf_075",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Paul Guers."
+  },
+  {
+    "id": "mf_076",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Cariddi McKinnon."
+  },
+  {
+    "id": "mf_077",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Nicole Jamet."
+  },
+  {
+    "id": "mf_078",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Luigi Diberti."
+  },
+  {
+    "id": "mf_079",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Jacques Dacqmine."
+  },
+  {
+    "id": "mf_080",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Tommaso Bianco."
+  },
+  {
+    "id": "mf_081",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Tony Sperandeo."
+  },
+  {
+    "id": "mf_082",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Ana Torrent."
+  },
+  {
+    "id": "mf_083",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Alice Di Giuseppe."
+  },
+  {
+    "id": "mf_084",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: RAI Home Video v edícii uvádza medzi hercami aj Alberto Gimignani."
+  },
+  {
+    "id": "mf_085",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: 1. miniséria má 6 epizód po ~60 minút."
+  },
+  {
+    "id": "mf_086",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: 1. miniséria sa nakrúcala v Ríme a v sicílskom meste Trapani."
+  },
+  {
+    "id": "mf_087",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Súhrny spomínajú aj švajčiarske lokácie Horgen a Ženevské jazero."
+  },
+  {
+    "id": "mf_088",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: 2. miniséria má podľa súhrnov opäť 6 epizód po ~60 minút."
+  },
+  {
+    "id": "mf_089",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že vznik 2. minisérie bol kontroverzný a Damiani považoval pokračovania za chybu."
+  },
+  {
+    "id": "mf_090",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že scenárista Ennio De Concini sa k 2. minisérii vrátil po presviedčaní producentom."
+  },
+  {
+    "id": "mf_091",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že 2. minisériu nakoniec režíroval Florestano Vancini."
+  },
+  {
+    "id": "mf_092",
+    "spoiler": true,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že v 2. minisérii sa zápletka posúva k medzinárodným obchodným vzťahom mafie."
+  },
+  {
+    "id": "mf_093",
+    "spoiler": true,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že 2. miniséria zdôrazňuje aj americké kontakty a kontakty s talianskou vládou."
+  },
+  {
+    "id": "mf_094",
+    "spoiler": true,
+    "text": "Spoiler-fakt: Wikipedia uvádza tajnú spoločnosť Itala ako prvok 2. minisérie."
+  },
+  {
+    "id": "mf_095",
+    "spoiler": true,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že tvorcovia v 2. minisérii odstránili niektoré postavy z 1. minisérie (dejový posun)."
+  },
+  {
+    "id": "mf_096",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že 4. miniséria sa vrátila k 6 epizódam, ale s dlhšími epizódami (takmer 100 min)."
+  },
+  {
+    "id": "mf_097",
+    "spoiler": true,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že 4. miniséria bola posledná s Michele Placidom ako Corrado Cattani."
+  },
+  {
+    "id": "mf_098",
+    "spoiler": true,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že osud komisára bol veľkou témou verejnosti pred štartom 4. minisérie."
+  },
+  {
+    "id": "mf_099",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza pri 4. minisérii priemer sledovanosti cez 14 miliónov."
+  },
+  {
+    "id": "mf_100",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza pri 4. minisérii vrchol 17,2 milióna v poslednej epizóde."
+  },
+  {
+    "id": "mf_101",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že po 1. minisérii tvorcovia a Placido dostávali vyhrážky, aby prestali natáčať."
+  },
+  {
+    "id": "mf_102",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že z bezpečnostných dôvodov sa 2. miniséria natáčala aj mimo Talianska (DE/CH/UK/GR)."
+  },
+  {
+    "id": "mf_103",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že 6. miniséria (1992) sa nakrúcala v Prahe v spolupráci s Českou televíziou."
+  },
+  {
+    "id": "mf_104",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: Wikipedia uvádza, že 6. miniséria bola koprodukovaná aj s ORF a pridala lokáciu Viedeň."
+  },
+  {
+    "id": "mf_105",
+    "spoiler": true,
+    "text": "Spoiler-fakt: Wikipedia uvádza, že 6. miniséria rieši globálne prepojenia zločinu, politiky a financií."
+  },
+  {
+    "id": "mf_106",
+    "spoiler": true,
+    "text": "Spoiler-fakt: Wikipedia uvádza v 6. minisérii témy drog a sprenevery rozvojovej pomoci."
+  },
+  {
+    "id": "mf_107",
+    "spoiler": true,
+    "text": "Spoiler-fakt: Wikipedia uvádza, že v 6. minisérii sa objaví linka na nacistickú minulosť."
+  },
+  {
+    "id": "mf_108",
+    "spoiler": true,
+    "text": "Spoiler-fakt: Wikipedia uvádza postavu Dona Amilcare Attilio Brenna (hrá ho Pierre Mondy) v 6. minisérii."
+  },
+  {
+    "id": "mf_109",
+    "spoiler": false,
+    "text": "Chobotnica-fakt: TVDB zhrnutie opisuje „chápadlá“ mafie ako prenikanie do každej vrstvy spoločnosti."
+  },
+  {
+    "id": "mf_110",
+    "spoiler": false,
+    "text": "Katalóg-fakt: Prime Video uvádza pri S3 E1 dátum premiéry 4. apríla 1987."
+  },
+  {
+    "id": "mf_111",
+    "spoiler": false,
+    "text": "Katalóg-fakt: Prime Video uvádza pri S3 E2 dátum premiéry 5. apríla 1987."
+  },
+  {
+    "id": "mf_112",
+    "spoiler": false,
+    "text": "Katalóg-fakt: Apple TV uvádza pri S1 E6 dĺžku približne 1 h 11 min (1984)."
+  },
+  {
+    "id": "mf_113",
+    "spoiler": false,
+    "text": "Katalóg-fakt: Apple TV uvádza pri S5 E1 dĺžku približne 1 h 50 min (1990)."
+  },
+  {
+    "id": "mf_114",
+    "spoiler": false,
+    "text": "Katalóg-fakt: TheTVDB uvádza pri S5 dátumy vysielania 14.–28. augusta 1990 na Rai 1."
+  },
+  {
+    "id": "mf_115",
+    "spoiler": false,
+    "text": "Katalóg-fakt: TVmaze uvádza S10 ako 2 epizódy (10. a 17. januára 2001)."
+  },
+  {
+    "id": "mf_116",
+    "spoiler": false,
+    "text": "Katalóg-fakt: IMDb má kompletný zoznam režisérov s počtom epizód (Perelli, Damiani, Vancini, Battiato)."
+  },
+  {
+    "id": "mf_117",
+    "spoiler": false,
+    "text": "Katalóg-fakt: JustWatch uvádza seriál ako 10-sezónový fenomén (1984–2001)."
+  },
+  {
+    "id": "mf_118",
+    "spoiler": false,
+    "text": "Katalóg-fakt: Prime Video stránka k sérii uvádza, že dostupnosť závisí od licenčných práv (napr. „expired rights“)."
+  },
+  {
+    "id": "mf_119",
+    "spoiler": false,
+    "text": "Katalóg-fakt: TVDB uvádza, že seriál má viac pokračovaní („follow-up series“) po pôvodnom štarte."
+  },
+  {
+    "id": "mf_120",
+    "spoiler": false,
+    "text": "Katalóg-fakt: Prime Video uvádza titul „The Octopus“ ako „global hit“ bežiaci 1984–2001."
+  },
+  {
+    "id": "mf_121",
+    "spoiler": false,
+    "text": "Katalóg-fakt: IMDb uvádza „La piovra“ pod rokmi 1984–2001."
+  },
+  {
+    "id": "mf_122",
+    "spoiler": false,
+    "text": "Katalóg-fakt: IMDb má samostatný „episode list“ pre jednotlivé sezóny."
+  },
+  {
+    "id": "mf_123",
+    "spoiler": false,
+    "text": "Katalóg-fakt: TVmaze má epizódny prehľad pre všetkých 10 sezón."
+  },
+  {
+    "id": "mf_124",
+    "spoiler": false,
+    "text": "Katalóg-fakt: TVDB uvádza seriál aj pod anglickým názvom „The Octopus“."
+  },
+  {
+    "id": "mf_125",
+    "spoiler": false,
+    "text": "Edícia-fakt: RaiCom (2025) oznámil kompletnú sériu v reštaurovanej HD verzii na 27 DVD."
+  },
+  {
+    "id": "mf_126",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza pri edícii „Anno DVD: 2025“."
+  },
+  {
+    "id": "mf_127",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza „Numero dischi: 27“."
+  },
+  {
+    "id": "mf_128",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza „Durata: 48 × 60′“."
+  },
+  {
+    "id": "mf_129",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza jazyk „Italiano“."
+  },
+  {
+    "id": "mf_130",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza titulky „Italiano per non udenti“."
+  },
+  {
+    "id": "mf_131",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza „Contenuti speciali: Sì“ (bonusy)."
+  },
+  {
+    "id": "mf_132",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza režisérov: Damiani, Vancini, Perelli, Battiato."
+  },
+  {
+    "id": "mf_133",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza, že titul je distribuovaný Eagle Pictures na licencii Rai Com."
+  },
+  {
+    "id": "mf_134",
+    "spoiler": false,
+    "text": "Edícia-fakt: RaiCom uvádza, že kolekcia „La Piovra – Edizione Speciale“ je dostupná od 29. októbra 2025."
+  },
+  {
+    "id": "mf_135",
+    "spoiler": false,
+    "text": "Edícia-fakt: Obchodné katalógy (napr. Discoteca Laziale) uvádzajú dátum vydania kolekcie 29. 10. 2025."
+  },
+  {
+    "id": "mf_136",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza, že séria je „in catalogo“ medzi titulmi ich domáceho videa."
+  },
+  {
+    "id": "mf_137",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza kompletné „tutte“ (všetky) sezóny v jednej edícii."
+  },
+  {
+    "id": "mf_138",
+    "spoiler": false,
+    "text": "Edícia-fakt: RaiCom správa označuje edíciu ako „restored HD version“."
+  },
+  {
+    "id": "mf_139",
+    "spoiler": false,
+    "text": "Edícia-fakt: RAI Home Video uvádza aj zoznam hlavných hercov pri edícii."
+  }
+]

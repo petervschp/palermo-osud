@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0b0f16"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" href="assets/icon-192.png"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <title>Palermo – Osud</title>
+</head>
+<body onload="brython({debug:0, pythonpath:['./']})">
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="logo"><img src="assets/logo.svg" alt="logo"/></div>
+        <div class="title">
+          <h1>Palermo – Osud</h1>
+          <div class="sub" id="subtitle">Hostless PWA • Brython</div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="secondary" id="btn_status">Stav</button>
+        <button class="secondary" id="btn_osud">Osud</button>
+        <button class="danger" id="btn_reset">Reset</button>
+      </div>
+    </div>
+
+    <div id="app" class="grid"></div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <!-- Brython from CDN (cached by SW after first load) -->
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.12.4/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.12.4/brython_stdlib.min.js"></script>
+
+  <script type="text/python" src="app.py"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+    }
+  </script>
+</body>
+</html>
