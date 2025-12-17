@@ -1,4 +1,4 @@
-const CACHE = "palermo-osud-brython-v1.3";
+const CACHE = "palermo-osud-brython-v1.5";
 const ASSETS = [
   "./",
   "./index.html",

@@ -42,5 +42,25 @@
       window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
     }
   </script>
+
+  <script>
+    // Make room for the on-screen keyboard and keep unlock controls reachable.
+    (function () {
+      function updateVV() {
+        if (!window.visualViewport) return;
+        const vv = window.visualViewport;
+        const kb = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+        document.documentElement.style.setProperty('--keyboard', kb + 'px');
+        document.documentElement.style.setProperty('--vvh', vv.height + 'px');
+      }
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', updateVV);
+        window.visualViewport.addEventListener('scroll', updateVV);
+      }
+      window.addEventListener('resize', updateVV);
+      updateVV();
+    })();
+  </script>
+
 </body>
 </html>

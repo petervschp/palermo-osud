@@ -1,4 +1,4 @@
-# Palermo – Osud (PWA, Brython) – v1
+# Palermo – Osud (PWA, Brython) – v1.4
 
 Jedno‑mobilová offline‑friendly PWA appka, ktorá nahrádza „Osud“ (moderátora) pri hre **Mestečko Palermo / Mafia**.
 Hráči si počas noci **podávajú mobil** – každý má rovnakú štruktúru krokov (PIN → akcia → výsledok → skryť), takže sa roly neprezrádzajú podľa rýchlosti.

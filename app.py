@@ -14,6 +14,36 @@ def toast(msg: str):
     timer.clear_timeout(getattr(toast, "_tm", None) or 0)
     toast._tm = timer.set_timeout(hide, 1800)
 
+
+def _bind_focus_scroll(inp, target):
+    try:
+        def _on_focus(ev):
+            try:
+                target.scrollIntoView({"block": "center", "behavior": "smooth"})
+            except Exception:
+                try:
+                    target.scrollIntoView()
+                except Exception:
+                    pass
+        inp.bind("focus", _on_focus)
+    except Exception:
+        pass
+
+
+def _set_pin_attrs(inp):
+    """Force numeric keypad + reduce keyboard/UI issues on mobile."""
+    try:
+        inp.type = "tel"          # numeric keypad (more reliable than type=number/password on iOS)
+        inp.inputMode = "numeric" # hint for modern browsers
+        inp.pattern = "[0-9]*"
+        inp.autocomplete = "off"
+        inp.autocapitalize = "off"
+        inp.spellcheck = False
+    except Exception:
+        pass
+
+
+
 def save(state):
     window.localStorage.setItem(LS_KEY, json.dumps(state))
 
@@ -22,23 +52,9 @@ def load():
     if not raw:
         return None
     try:
-        st = json.loads(raw)
-        return normalize_state(st)
+        return json.loads(raw)
     except Exception:
         return None
-
-
-def normalize_state(st):
-    """Backwards-compatible defaults for older localStorage states."""
-    if not st:
-        return st
-    st.setdefault("settings", {})
-    # Fill missing settings keys with DEFAULTS
-    for k, v in DEFAULTS.items():
-        st["settings"].setdefault(k, v)
-    # Also keep pin at top-level
-    st.setdefault("pin", "")
-    return st
 
 def clear_state():
     window.localStorage.removeItem(LS_KEY)
@@ -155,7 +171,6 @@ def set_subtitle(text):
 # end
 
 DEFAULTS = {
-    "unlock_mode": "slider",  # slider/button
     "include_katanyi": True,
     "include_doctor": False,
     "mafia_know": True,
@@ -227,6 +242,7 @@ def screen_setup():
     left <= ta
 
     pin_in = html.INPUT(Type="password", Placeholder="Spoločný PIN (4 číslice)", Maxlength="4")
+    _set_pin_attrs(pin_in)
     pin_wrap = html.DIV(Class="grid")
     pin_wrap <= html.DIV([html.LABEL("Spoločný PIN (4 číslice)"), pin_in])
     left <= pin_wrap
@@ -235,6 +251,7 @@ def screen_setup():
     unlock_sel <= html.OPTION("Posuvník (default)", value="slider", selected=True)
     unlock_sel <= html.OPTION("Tlačidlo", value="button")
     left <= html.DIV([html.LABEL("Odomknutie obrazovky"), unlock_sel])
+
 
     # Settings cards (right)
     right = html.DIV(Class="card grid")
@@ -311,13 +328,13 @@ def screen_setup():
             "include_doctor": bool(cb_d.checked),
             "mafia_know": bool(cb_mk.checked),
             "mafia_strict_unanimity": bool(cb_mu.checked),
+            "unlock_mode": unlock_sel.value,
             "reveal_after_judgement": reveal.value,
             "first_dead_osud": bool(cb_osud.checked),
             "mask_citizens": bool(cb_mask.checked),
             "facts_enabled": bool(cb_fact.checked),
             "facts_for_all": bool(cb_fact_all.checked),
             "facts_no_spoiler": bool(cb_nospoil.checked),
-            "unlock_mode": unlock_sel.value,
             "min_screen_ms": DEFAULTS["min_screen_ms"]
         }
         mafia_count = int(mafia_sel.value)
@@ -334,11 +351,9 @@ def screen_setup():
 
     return root
 
-
 def pass_gate(title_text, subtitle_text, on_unlock):
     st = load()
     pin_required = st["pin"] if st else ""
-    mode = (st.get("settings", {}).get("unlock_mode", "slider") if st else "slider")
 
     wrap = html.DIV(Class="card grid center")
     wrap <= h2(title_text)
@@ -346,15 +361,18 @@ def pass_gate(title_text, subtitle_text, on_unlock):
         wrap <= para(subtitle_text, "small")
 
     pin_in = html.INPUT(Type="password", Placeholder="Zadaj PIN", Maxlength="4")
+    _set_pin_attrs(pin_in)
     wrap <= pin_in
 
-    info = html.DIV("", Class="small")
-    wrap <= info
+    # Unlock UI (default: slider; optional: button)
+    mode = "slider"
+    try:
+        if st and "settings" in st:
+            mode = st["settings"].get("unlock_mode", "slider")
+    except Exception:
+        mode = "slider"
 
-    def do_unlock():
-        if hasattr(window.navigator, "vibrate"):
-            window.navigator.vibrate(40)
-        on_unlock()
+    info = html.DIV("", Class="small")
 
     def check_pin():
         pin = (pin_in.value or "").strip()
@@ -363,43 +381,33 @@ def pass_gate(title_text, subtitle_text, on_unlock):
             return False
         return True
 
+    def do_unlock():
+        if hasattr(window.navigator, "vibrate"):
+            window.navigator.vibrate(40)
+        on_unlock()
+
     if mode == "button":
+        wrap <= para("Odomkni tlačidlom (nastavenie hry).", "small")
         btn = html.BUTTON("Odomknúť", Class="secondary", style={"fontSize":"18px", "padding":"16px 18px"})
-        def on_click(ev=None):
-            if not check_pin():
-                return
-            btn.disabled = True
-            btn.text = "OK…"
-            timer.set_timeout(lambda: do_unlock(), 80)
-        btn.bind("click", on_click)
         wrap <= btn
-        wrap <= para("Tip: v nastaveniach môžeš prepnúť na posuvník.", "small")
+        wrap <= info
+        def on_btn(ev=None):
+            if check_pin():
+                do_unlock()
+        btn.bind("click", on_btn)
     else:
-        wrap <= para("Potiahni posuvník doprava pre odomknutie.", "small")
-        slider = html.INPUT(Type="range", Min="0", Max="100", Value="0", Step="1", Class="unlockRange")
+        wrap <= para("Potiahni posuvník doprava na odomknutie.", "small")
+        slider = html.INPUT(Type="range", Min="0", Max="100", Value="0", Class="unlock-slider")
         wrap <= slider
-
-        def on_input(ev=None):
-            try:
-                v = int(slider.value)
-            except Exception:
-                v = 0
-            if v >= 95:
-                if not check_pin():
-                    slider.value = "0"
-                    return
-                slider.value = "100"
-                slider.disabled = True
-                timer.set_timeout(lambda: do_unlock(), 80)
-
-        def on_change(ev=None):
-            # snap back if not unlocked
-            if not slider.disabled:
+        wrap <= info
+        def on_slide(ev=None):
+            if slider.value == "100":
+                if check_pin():
+                    do_unlock()
+                # vždy vráť posuvník späť
                 slider.value = "0"
-
-        slider.bind("input", on_input)
-        slider.bind("change", on_change)
-        wrap <= para("V nastaveniach môžeš namiesto posuvníka použiť tlačidlo.", "small")
+        slider.bind("input", on_slide)
+        slider.bind("change", on_slide)
 
     return wrap
 

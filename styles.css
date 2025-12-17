@@ -143,11 +143,70 @@ textarea{min-height:140px; resize:vertical}
 
 
 /* Unlock slider */
-.unlockRange{
-  width: 100%;
-  max-width: 520px;
-  margin: 10px auto 6px auto;
+.unlock-slider{
+  width: min(420px, 90vw);
+  height: 44px;
+  margin-top: 6px;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
-.unlockRange::-webkit-slider-thumb{
-  cursor: grab;
+.unlock-slider:focus{outline:none}
+.unlock-slider::-webkit-slider-runnable-track{
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid var(--line);
+}
+.unlock-slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(0,0,0,.25);
+  margin-top: -13px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+.unlock-slider::-moz-range-track{
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid var(--line);
+}
+.unlock-slider::-moz-range-thumb{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(0,0,0,.25);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
+
+/* --- v1.5: Mobile keyboard friendliness --- */
+:root{
+  --keyboard: 0px; /* set by visualViewport */
+  --vvh: 100vh;
+}
+
+/* Use visual viewport height when available (prevents fixed elements from being hidden under keyboard). */
+body{
+  min-height: var(--vvh, 100vh);
+}
+
+/* Any full-screen panel should leave room for the keyboard. */
+.screen, .wrap, #app{
+  padding-bottom: calc(16px + env(safe-area-inset-bottom) + var(--keyboard));
+}
+
+/* PIN input tweaks */
+input.pin, input[data-pin="1"]{
+  inputmode: numeric;
+}
+
+/* Prefer numeric keypad on mobile */
+input[type="tel"].pin, input.pin[type="tel"]{
+  letter-spacing: 0.25em;
 }
