@@ -56,3 +56,19 @@ MIT – viď `LICENSE`.
 ## Poznámka k menám hráčov
 - Appka zachová poradie hráčov presne podľa zoznamu v nastavení.
 - Ak zadáš rovnaké meno viackrát (aj s inou veľkosťou písmen), appka ho automaticky odlíši pridaním „ (2)“, „ (3)“…
+
+
+## Lokálne testovanie a QR na web
+
+Keď spúšťaš appku lokálne (napr. VSCode Live Server), v hlavičke sa zobrazí tlačidlo **O hre**.
+V modale sa zobrazí QR kód na web verziu, ak do súboru `public_url.txt` (v koreni projektu) vložíš svoju GitHub Pages URL.
+
+Príklad obsahu `public_url.txt`:
+
+```
+https://tvoje-meno.github.io/tvoje-repo/
+```
+
+## Inštalácia ako PWA
+
+Na webe sa v hlavičke zobrazí tlačidlo **Inštalovať** (keď prehliadač ponúkne PWA inštaláciu).

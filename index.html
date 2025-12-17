@@ -21,7 +21,8 @@
       </div>
       <div class="btns">
         <button class="secondary" id="btn_status">Stav</button>
-        <button class="secondary" id="btn_osud">Osud</button>
+        <button class="secondary" id="btn_install" style="display:none">Inštalovať</button>
+        <button class="secondary" id="btn_osud" style="display:none">Osud</button>
         <button class="danger" id="btn_reset">Reset</button>
       </div>
     </div>
@@ -59,6 +60,29 @@
       }
       window.addEventListener('resize', updateVV);
       updateVV();
+    })();
+  </script>
+
+
+  <script>
+    // PWA install prompt wiring
+    (function(){
+      window.deferredPrompt = null;
+      window.addEventListener('beforeinstallprompt', function(e){
+        e.preventDefault();
+        window.deferredPrompt = e;
+        var btn = document.getElementById('btn_install');
+        if(btn){
+          btn.style.display = 'inline-flex';
+          btn.textContent = 'Inštalovať';
+          btn.dataset.mode = 'install';
+        }
+      });
+      window.addEventListener('appinstalled', function(){
+        window.deferredPrompt = null;
+        var btn = document.getElementById('btn_install');
+        if(btn){ btn.style.display = 'none'; }
+      });
     })();
   </script>
 

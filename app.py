@@ -161,6 +161,146 @@ def choice_row(label, on_click):
 def set_subtitle(text):
     document["subtitle"].text = text
 
+
+PUBLIC_URL = ""
+PUBLIC_URL_READY = False
+
+def _is_local_host():
+    try:
+        host = window.location.hostname
+        proto = window.location.protocol
+        return proto == "file:" or host in ("localhost","127.0.0.1","0.0.0.0")
+    except Exception:
+        return False
+
+def _is_standalone():
+    try:
+        return window.matchMedia("(display-mode: standalone)").matches
+    except Exception:
+        return False
+
+def _load_public_url():
+    """Load public URL for QR (optional). Put your GitHub Pages URL into public_url.txt."""
+    global PUBLIC_URL, PUBLIC_URL_READY
+    try:
+        def ok(req):
+            global PUBLIC_URL, PUBLIC_URL_READY
+            if req.status in (200, 0):
+                PUBLIC_URL = (req.text or "").strip()
+            PUBLIC_URL_READY = True
+        def fail(req):
+            global PUBLIC_URL_READY
+            PUBLIC_URL_READY = True
+        ajax.get("public_url.txt", oncomplete=ok, onerror=fail, timeout=1500)
+    except Exception:
+        PUBLIC_URL_READY = True
+
+def _show_about():
+    # overlay
+    ov = html.DIV(Class="overlay")
+    modal = html.DIV(Class="card grid modal")
+    modal <= h2("O hre Palermo – Osud")
+    modal <= para("Hostless verzia hry Mestečko Palermo/Mafia: roly, noc/deň, tajné akcie. Mobil koluje u každého živého hráča; appka nahrádza moderátora („Osud“).", "small")
+    modal <= hr()
+
+    left = html.DIV(Class="grid")
+    left <= tag("Ako hrať (stručne)")
+    left <= para("1) Nastav mená, PIN a roly. 2) Rozdaj roly (mobil koluje). 3) Počas noci každý živý hráč spraví akciu. 4) Ráno appka vyhodnotí noc. 5) Cez deň diskutujete mimo appky a v appke zadáte odsúdeného.", "small")
+    left <= para("Tip: Mikro-obsah a maskovacia akcia vyrovnávajú čas na mobile, aby sa roly neprezrádzali podľa rýchlosti.", "small")
+
+    right = html.DIV(Class="grid center")
+    right <= tag("Web verzia")
+    if not PUBLIC_URL_READY:
+        right <= para("Načítavam URL…", "small")
+    if PUBLIC_URL:
+        right <= html.DIV(PUBLIC_URL, Class="kbd")
+        # QR via remote generator (lightweight)
+        try:
+            enc = window.encodeURIComponent(PUBLIC_URL)
+        except Exception:
+            enc = PUBLIC_URL
+        qr = html.IMG(Src=f"https://api.qrserver.com/v1/create-qr-code/?size=220x220&data={enc}", Class="qr", Alt="QR")
+        right <= qr
+        right <= para("Naskenuj QR a otvor web. Potom si môžeš appku nainštalovať do zariadenia.", "small")
+    else:
+        right <= para("Doplň svoju GitHub Pages URL do súboru public_url.txt (v koreni projektu).", "small")
+
+    two = html.DIV(Class="two")
+    two <= left
+    two <= right
+    modal <= two
+    modal <= hr()
+    close = html.BUTTON("Zavrieť", Class="secondary")
+    def do_close(ev=None):
+        try:
+            ov.remove()
+        except Exception:
+            pass
+    close.bind("click", do_close)
+    modal <= close
+    ov <= modal
+    document <= ov
+
+def _wire_install_about_button(state):
+    """Header button: on web show Install (if available), on local show About."""
+    try:
+        btn = document["btn_install"]
+    except Exception:
+        return
+
+    # Default: hidden
+    btn.style.display = "none"
+    btn.text = "Inštalovať"
+    btn.dataset.mode = ""
+
+    # Hide when installed
+    if _is_standalone():
+        return
+
+    # Local: About
+    if _is_local_host():
+        btn.style.display = "inline-flex"
+        btn.text = "O hre"
+        btn.dataset.mode = "about"
+    else:
+        # Web: show only if install prompt available (set by JS)
+        try:
+            if getattr(window, "deferredPrompt", None):
+                btn.style.display = "inline-flex"
+                btn.text = "Inštalovať"
+                btn.dataset.mode = "install"
+        except Exception:
+            pass
+
+    def on_click(ev=None):
+        mode = getattr(btn, "dataset", {}).get("mode", "")
+        if mode == "install":
+            try:
+                dp = getattr(window, "deferredPrompt", None)
+                if dp:
+                    dp.prompt()
+                    # userChoice is a promise; we don't need to await
+                    window.deferredPrompt = None
+                    btn.style.display = "none"
+            except Exception:
+                pass
+        else:
+            _show_about()
+    btn.unbind("click")
+    btn.bind("click", on_click)
+
+def _wire_osud_button(state):
+    """Show Osud button only when 'first dead = osud' is active and enabled."""
+    try:
+        btn = document["btn_osud"]
+    except Exception:
+        return
+    btn.style.display = "none"
+    if not state:
+        return
+    if state.get("settings", {}).get("first_dead_osud") and state.get("osud", {}).get("enabled"):
+        btn.style.display = "inline-flex"
+
 # -------- State / Phases --------
 # phases:
 # setup
@@ -252,7 +392,7 @@ def goto(phase):
 
 # -------- Screens --------
 def screen_setup():
-    set_subtitle("Nastavenie hry (v1)")
+    set_subtitle("Nastavenie hry")
     root = html.DIV(Class="grid")
 
     left = html.DIV(Class="card grid")
@@ -378,7 +518,7 @@ def pass_gate(title_text, subtitle_text, on_unlock):
     st = load()
     pin_required = st["pin"] if st else ""
 
-    wrap = html.DIV(Class="card grid center")
+    wrap = html.DIV(Class="card grid center gate")
     wrap <= h2(title_text)
     if subtitle_text:
         wrap <= para(subtitle_text, "small")
@@ -453,7 +593,7 @@ def min_delay_button(label, ms, on_click, cls="secondary"):
     return html.DIV([btn, note], Class="grid")
 
 def role_pass_screen(state):
-    set_subtitle(f"Rozdanie rolí • hráč {state['step_index']+1}/{len(state['players'])}")
+    set_subtitle("Rozdanie rolí")
     idx = state["step_index"]
     if idx >= len(state["players"]):
         # move to night
@@ -502,7 +642,7 @@ def role_pass_screen(state):
 
     return pass_gate(
         f"Telefón pre: {player['name']}",
-        "Zadaj PIN a podrž. Potom si pozri rolu, skry a podaj ďalej.",
+        "Zadaj PIN a odomkni. Potom si pozri rolu, skry a podaj ďalej.",
         unlock
     )
 
@@ -516,6 +656,7 @@ def pick_target_list(state, exclude_ids=None):
     return box, choices
 
 def night_turn_screen(state):
+    set_subtitle("Noc 🌙")
     alive = alive_players(state)
     idx = state["step_index"]
     if idx >= len(alive):
@@ -612,7 +753,7 @@ def night_turn_screen(state):
 
     return pass_gate(
         f"Noc 🌙 • hráč {idx+1}/{len(alive)}",
-        f"Telefón si zoberie {player['name']}. Zadaj PIN a podrž. (Každý vyberie jedno meno.)",
+        f"Telefón si zoberie {player['name']}. Zadaj PIN a odomkni. (Každý vyberie jedno meno.)",
         unlock
     )
 
@@ -831,6 +972,28 @@ def render():
     app = document["app"]
     app.clear()
 
+    # header buttons
+    _wire_install_about_button(state)
+    _wire_osud_button(state)
+
+    # subtitle (keep simple to avoid confusing counters)
+    if not state:
+        set_subtitle("Hostless PWA • Brython")
+    else:
+        ph = state.get("phase","")
+        if ph == "setup":
+            set_subtitle("Nastavenie hry")
+        elif ph == "role_pass":
+            set_subtitle("Rozdanie rolí")
+        elif ph == "night_turn":
+            set_subtitle("Noc 🌙")
+        elif ph == "dawn":
+            set_subtitle(f"Ráno • Deň {state.get('day',1)}")
+        elif ph == "day_admin":
+            set_subtitle(f"Deň {state.get('day',1)} • administrácia")
+        elif ph == "end":
+            set_subtitle("Koniec hry")
+
     # top buttons
     def on_reset(ev=None):
         if window.confirm("Naozaj resetovať hru?"):
@@ -854,7 +1017,10 @@ def render():
         if not st:
             toast("Bez hry")
             return
-        # Osud panel is just shown as an extra card
+        if not (st.get("settings", {}).get("first_dead_osud") and st.get("osud", {}).get("enabled")):
+            toast("Osud: režim „Prvý mŕtvy = Osud“ nie je aktívny")
+            return
+        # Admin náhľad (len pre technické vedenie)
         app <= osud_panel(st)
     document["btn_osud"].unbind("click")
     document["btn_osud"].bind("click", on_osud)
